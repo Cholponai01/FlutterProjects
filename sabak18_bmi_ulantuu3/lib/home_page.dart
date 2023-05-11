@@ -36,20 +36,34 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 children: [
                   StatusCard(
-                    child: MaleFemale(
-                      istrue: isTrue,
-                      icon: Icons.male,
-                      text: AppTexts.male,
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          isTrue = true;
+                        });
+                      },
+                      child: MaleFemale(
+                        isTrue: isTrue,
+                        icon: Icons.male,
+                        text: AppTexts.male,
+                      ),
                     ),
                   ),
                   const SizedBox(
                     width: 35,
                   ),
                   StatusCard(
-                    child: MaleFemale(
-                      istrue: !isTrue,
-                      icon: Icons.female,
-                      text: AppTexts.female,
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          isTrue = false;
+                        });
+                      },
+                      child: MaleFemale(
+                        isTrue: !isTrue,
+                        icon: Icons.female,
+                        text: AppTexts.female,
+                      ),
                     ),
                   ),
                 ],
