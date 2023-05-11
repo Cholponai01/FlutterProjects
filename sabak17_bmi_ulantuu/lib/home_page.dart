@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sabak17_bmi_ulantuu/components/calculator.dart';
 import 'package:sabak17_bmi_ulantuu/components/status_card.dart';
 import 'package:sabak17_bmi_ulantuu/components/status_card2.dart';
-import 'package:sabak17_bmi_ulantuu/components/status_card3.dart';
+import 'package:sabak17_bmi_ulantuu/components/status_slider_card.dart';
 import 'package:sabak17_bmi_ulantuu/theme/app_colors.dart';
 import 'package:sabak17_bmi_ulantuu/theme/app_texts.dart';
 

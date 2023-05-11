@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sabak18_bmi_ulantuu3/example.dart';
+import 'package:sabak18_bmi_ulantuu3/home_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
-      home: const ForExample(),
+      home: const MyHomePage(),
     );
   }
 }

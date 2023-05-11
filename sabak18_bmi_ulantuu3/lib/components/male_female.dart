@@ -6,10 +6,12 @@ class MaleFemale extends StatelessWidget {
     super.key,
     required this.icon,
     required this.text,
+    required this.istrue,
   });
 
   final IconData? icon;
   final String text;
+  final bool istrue;
 
   @override
   Widget build(BuildContext context) {
