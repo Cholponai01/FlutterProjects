@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sabak20_bmi_ulantuu5/components/calculate_button.dart';
 import 'package:sabak20_bmi_ulantuu5/components/height.dart';
 import 'package:sabak20_bmi_ulantuu5/components/male_female.dart';
+import 'package:sabak20_bmi_ulantuu5/components/result_page.dart';
 import 'package:sabak20_bmi_ulantuu5/components/status_card.dart';
 import 'package:sabak20_bmi_ulantuu5/components/weight_age.dart';
 import 'package:sabak20_bmi_ulantuu5/theme/app_colors.dart';
@@ -21,6 +22,24 @@ class _MyHomePageState extends State<MyHomePage> {
   int weight = 60;
   int age = 23;
   double height = 180;
+
+  void results() {
+    final res = weight / pow(height / 100, 2);
+    if (res <= 18.5) {
+      // print('Cиз арыксыз');
+      _showAlertDialog(context, 'Cиз арыксыз');
+    } else if (res >= 18.6 && res <= 25) {
+      // print('Сиз нормалдуусуз');
+      _showAlertDialog(context, 'Cиздин салмагыныз нормалдуу');
+    } else if (res >= 25.1 && res <= 30) {
+      // print('Сиз ашыкча салмактуусуз');
+      _showAlertDialog(context, 'Cиз ашыкча салмактуусуз');
+    } else {
+      // print('Сиз семизсиз');
+      _showAlertDialog(context, 'Сиз семизсиз');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -139,18 +158,44 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       bottomNavigationBar: CalculateButton(
         onPressed: () {
-          final res = weight / pow(height / 100, 2);
-          if (res <= 18.5) {
-            print('Cиз арыксыз');
-          } else if (res >= 18.6 && res <= 25) {
-            print('Сиз нормалдуусуз');
-          } else if (res >= 25.1 && res <= 30) {
-            print('Сиз ашыкча салмактуусуз');
-          } else {
-            print('Сиз семизсиз');
-          }
+          results();
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ResultPage(
+                metri: height,
+                salmak: weight,
+              ),
+            ),
+          );
         },
       ),
     );
   }
+}
+
+Future<void> _showAlertDialog(BuildContext context, String text) async {
+  return showDialog<void>(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: AppColors.navyBlueColor,
+          title: const Text(
+            AppTexts.bmi,
+            textAlign: TextAlign.center,
+          ),
+          content: Text(
+            text,
+            textAlign: TextAlign.center,
+          ),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Чыгуу'),
+              onPressed: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        );
+      });
 }

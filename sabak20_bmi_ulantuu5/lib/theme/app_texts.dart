@@ -7,4 +7,5 @@ class AppTexts {
   static const age = 'AGE';
   static const cm = 'cm';
   static const calculator = 'CALCULATOR';
+  static const kayraEsepte = 'Кайра эсепте';
 }
