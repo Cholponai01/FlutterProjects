@@ -18,7 +18,7 @@ class CircularButton extends StatelessWidget {
       width: 45,
       child: FloatingActionButton(
         backgroundColor: AppColors.greyColor,
-        onPressed: () {},
+        onPressed: onPressed,
         child: Icon(
           icon,
           color: AppColors.whiteColor,

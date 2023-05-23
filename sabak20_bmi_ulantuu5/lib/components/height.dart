@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sabak20_bmi_ulantuu5/theme/app_colors.dart';
 
