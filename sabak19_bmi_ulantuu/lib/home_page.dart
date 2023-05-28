@@ -84,7 +84,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 onChanged: (value) {
                   setState(() {
                     height = value;
-                  });
+                  },
+                  );
                 },
                 height: height,
               ),
