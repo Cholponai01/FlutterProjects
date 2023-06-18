@@ -31,11 +31,11 @@ class _MyHomeViewState extends State<MyHomeView> {
           ),
         ),
         child: Column(children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
+              children: [
                 Icon(Icons.near_me, color: AppColors.iconColor),
                 Icon(Icons.location_city, color: AppColors.iconColor),
               ],
