@@ -16,7 +16,10 @@ class _TestViewState extends State<TestView> {
         Container(
           height: 50,
           width: 80,
-          decoration: const BoxDecoration(color: AppColors.white),
+          decoration: BoxDecoration(
+            color: AppColors.black,
+            borderRadius: BorderRadius.circular(15),
+          ),
         ),
         const SizedBox(
           width: 40,
