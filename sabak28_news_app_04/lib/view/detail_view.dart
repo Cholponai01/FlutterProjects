@@ -5,6 +5,7 @@ import 'package:sabak28_news_app_04/components/detail_news_time.dart';
 import 'package:sabak28_news_app_04/components/detail_site_button.dart';
 import 'package:sabak28_news_app_04/components/detail_title.dart';
 import 'package:sabak28_news_app_04/model/article.dart';
+import 'package:sabak28_news_app_04/theme/app_colors.dart';
 import 'package:sabak28_news_app_04/theme/app_text_styles.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -22,7 +23,7 @@ class DetailView extends StatelessWidget {
     );
     return Scaffold(
         appBar: AppBar(
-            backgroundColor: Colors.orange,
+            backgroundColor: AppColors.detailAppBarColor,
             centerTitle: true,
             title: Text(article.title),
             actions: article.url.isNotEmpty
@@ -58,7 +59,7 @@ class DetailView extends StatelessWidget {
                 Text(article.description.toString(),
                     textAlign: TextAlign.center,
                     style: AppTextStyles.descriptionTextStyle),
-                const DetailSiteButton(),
+                DetailSiteButton(article: article),
               ],
             ),
           ),

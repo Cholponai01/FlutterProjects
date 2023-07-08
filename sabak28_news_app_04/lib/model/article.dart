@@ -7,7 +7,7 @@ class Article {
     required this.title,
     required this.description,
     required this.url,
-    this.urlToImage,
+    required this.urlToImage,
     required this.publishedAt,
     required this.content,
   });
