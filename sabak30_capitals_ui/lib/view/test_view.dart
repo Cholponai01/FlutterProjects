@@ -19,6 +19,12 @@ class _TestViewState extends State<TestView> {
           decoration: BoxDecoration(
             color: AppColors.black,
             borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                blurRadius: 7,
+              ),
+            ],
           ),
         ),
         const SizedBox(

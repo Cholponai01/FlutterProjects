@@ -92,7 +92,7 @@ class _HomeViewState extends State<HomeView> {
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
                           color: AppColors.white,
-                          borderRadius: BorderRadius.circular(12),
+                          borderRadius: BorderRadius.circular(15),
                         ),
                         child: Column(
                           children: [
