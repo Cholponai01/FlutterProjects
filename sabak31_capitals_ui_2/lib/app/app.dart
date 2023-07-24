@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sabak30_capitals_ui/constants/app_colors.dart';
-import 'package:sabak30_capitals_ui/view/home_view.dart';
+import 'package:sabak31_capitals_ui_2/constants/app_colors.dart';
+import 'package:sabak31_capitals_ui_2/view/home_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

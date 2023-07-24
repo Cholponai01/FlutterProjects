@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sabak30_capitals_ui/constants/app_colors.dart';
-import 'package:sabak30_capitals_ui/constants/app_text_style.dart';
+import 'package:sabak31_capitals_ui_2/constants/app_colors.dart';
+import 'package:sabak31_capitals_ui_2/constants/app_text_style.dart';
 
 class TestView extends StatefulWidget {
   const TestView({super.key});
@@ -18,7 +18,7 @@ class _TestViewState extends State<TestView> {
             height: 50,
             width: 80,
             decoration: BoxDecoration(
-              color: AppColors.black,
+              color: AppColors.white,
               borderRadius: BorderRadius.circular(15),
               boxShadow: [
                 BoxShadow(
@@ -78,7 +78,7 @@ class _TestViewState extends State<TestView> {
               // mouseCursor: null,
             ),
           ),
-          const Text('paris'),
+          const Text('Paris'),
         ],
       ),
     );
