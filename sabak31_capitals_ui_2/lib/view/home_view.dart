@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sabak31_capitals_ui_2/constants/app_colors.dart';
+import 'package:sabak31_capitals_ui_2/view/model/continents.dart';
 import 'package:sabak31_capitals_ui_2/view/test_view.dart';
 
 class HomeView extends StatefulWidget {
@@ -11,35 +12,17 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> {
-  List<String> continents = [
-    'Asia',
-    'Europe',
-    'North America',
-    'South America',
-    'Africa',
-    'Australia',
-  ];
-  // List<String> images = [
-  //   'asia.svg',
-  //   'europe.svg',
-  //   'northAmerica.svg',
-  //   'southamerica.svg',
-  //   'africa.svg',
-  //   'australia.svg',
-  // ];
-  Map<dynamic, dynamic> images = {
-    'Asia': 'asia.svg',
-    'Europe': 'europe.svg',
-    'North America': 'northAmerica.svg',
-    'South America': 'southamerica.svg',
-    'Australia': 'australia.svg',
-  };
+  List<Continents> continents = continentsList;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Мамлекеттердин борборлору'),
+        title: Text(
+          'Мамлекеттердин борборлору',
+          style: TextStyle(
+              color: continents[5].color, fontWeight: FontWeight.w500),
+        ),
         actions: [
           IconButton(
             onPressed: () {},
@@ -73,7 +56,6 @@ class _HomeViewState extends State<HomeView> {
               child: GridView.builder(
                   gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                     maxCrossAxisExtent: 200,
-                    // childAspectRatio: 2 / 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
                   ),
@@ -97,12 +79,17 @@ class _HomeViewState extends State<HomeView> {
                         child: Column(
                           children: [
                             Text(
-                              continents[index],
-                              style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
+                              continents[index].name,
+                              style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: continents[index].color,
+                              ),
                             ),
                             SvgPicture.asset(
-                              'assets/continents/${images[continents[index]]}',
+                              'assets/continents/${continents[index].image}.svg',
+                              width: 100,
+                              color: continents[index].color,
                             )
                           ],
                         ),

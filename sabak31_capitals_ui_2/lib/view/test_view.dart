@@ -70,15 +70,45 @@ class _TestViewState extends State<TestView> {
       ]),
       body: Column(
         children: [
-          Expanded(
-            child: Slider(
-              value: 180, onChanged: (v) {},
-              min: 0,
-              max: 200,
-              // mouseCursor: null,
+          Slider(
+            activeColor: Colors.black,
+            value: 200,
+            onChanged: (v) {},
+            min: 0,
+            max: 200,
+          ),
+          const Text(
+            'Paris',
+            style: AppTextStyle.capitalsStyle,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Image.asset(
+              'assets/capitals/paris.jpeg',
             ),
           ),
-          const Text('Paris'),
+          SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: 1.6,
+                ),
+                itemCount: 4,
+                itemBuilder: ((context, index) {
+                  return Card(
+                    color: Colors.grey[400],
+                    child: InkWell(
+                      onTap: () {
+                        // onTap(jooptor[index].isTrue);
+                      },
+                      child: Center(child: Text('1')),
+                    ),
+                  );
+                })),
+          )
         ],
       ),
     );

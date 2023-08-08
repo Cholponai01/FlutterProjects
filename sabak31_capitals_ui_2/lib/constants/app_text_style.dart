@@ -8,4 +8,6 @@ class AppTextStyle {
       fontSize: 18, fontWeight: FontWeight.w500, color: AppColors.black);
   static const TextStyle num3Style = TextStyle(
       fontSize: 17, fontWeight: FontWeight.w700, color: AppColors.green);
+  static const TextStyle capitalsStyle = TextStyle(
+      fontSize: 20, fontWeight: FontWeight.w800, color: AppColors.black);
 }
